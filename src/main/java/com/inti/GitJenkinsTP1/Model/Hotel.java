@@ -1,18 +1,16 @@
 package com.inti.GitJenkinsTP1.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table
+
 @Entity
+@Table(name="hotel_GitJenkins")
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Hotel {
-
 	@Id
 	long idHotel;
 	String nom;
