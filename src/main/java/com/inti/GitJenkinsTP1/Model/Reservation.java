@@ -15,10 +15,16 @@ public class Reservation {
 	long idVoyageur;
 	Date Voyageur;
 	int nbJours;
-	@ManyToOne
-	@JoinTable (name = "avisHotel",
-	joinColumns = @JoinColumn(name = "idVoyageur"),
-	inverseJoinColumns =   @JoinColumn(name = "idHotel"))
-	private Hotel hotel;
 	
+	@ManyToOne
+	@JoinTable (name = "reservationHotel",
+	joinColumns = @JoinColumn(name = "idReservation"),
+	inverseJoinColumns =   @JoinColumn(name = "idHotel"))
+	private Reservation reservation;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinTable (name = "reservationVoyageur",
+	joinColumns = @JoinColumn(name = "idReservation"),
+	inverseJoinColumns =   @JoinColumn(name = "idVoyageur"))
+	private Voyageur voyageur;
 }

@@ -1,8 +1,8 @@
 package com.inti.GitJenkinsTP1.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,4 +17,7 @@ public class Destination {
 	long idDestination;
 	long longitude;
 	long latitude;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "Destination")
+	private List<Hotel> listeHotel;
 }
