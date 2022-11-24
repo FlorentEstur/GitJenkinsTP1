@@ -37,7 +37,7 @@ pipeline {
             
 		    failure {
 			    echo "Echec"
-			    mail to: "estur.florent@gmail.com", "loir.jonathan@gmail.com",
+			    mail to: "estur.florent@gmail.com, loir.jonathan@gmail.com",
 				subject: "Echec pipeline : ${currentBuild.fullDisplayName}",
 				body: "Erreur dans le build : ${env.BUILD_URL}"
 			}
